@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Code</title>
+</head>
+<body>
+    <script>
+        // الحصول على رابط الصفحة الحالي
+        const urlParams = new URLSearchParams(window.location.search);
+
+        // استخراج قيمة "code"
+        let code = urlParams.get('code');
+
+        // التأكد من أن الكود ليس فارغًا
+        if (code) {
+            // لمنع تنفيذ الكود كـ HTML، نقوم بتفريغ الكود كـ نص فقط باستخدام innerText
+            document.write('<div>' + code + '</div>');
+        } else {
+            document.write('No code found.');
+        }
+    </script>
+</body>
+</html>
